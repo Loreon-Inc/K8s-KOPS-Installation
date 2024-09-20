@@ -105,7 +105,7 @@ You Created. --> Save.
 	  --zones us-east-2c \
 	  --networking cilium \
 	  --control-plane-size t2.medium \
-	  --master-count 1 \
+	  --control-plane-count 1 \
 	  --node-size t2.medium \
 	  --node-count 2 \
 	  ${NAME}
@@ -115,6 +115,8 @@ You Created. --> Save.
 # 9) Create kubernetes cluser
 
 	 kops update cluster ${NAME} --yes --admin
+
+  	kops export kubecfg $NAME --admin
 
 # 10) Validate your cluster(KOPS will take some time to create cluster ,Execute below commond after 3 or 4 mins)
 
